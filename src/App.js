@@ -1,4 +1,5 @@
 import './App.css';
+import ContactForm from './ContactForm';
 import Form from './Form'
 import FormikForm from './FormikForm'
 
@@ -7,10 +8,13 @@ function App() {
     <div className="App">
       <p>Vesnica Divotica</p>
       <Form/>
-      <br/>
+      <br/><br/>
+      <ContactForm/>
+      <br/><br/>
       <FormikForm/>
     </div>
   );
 }
+
 
 export default App;
