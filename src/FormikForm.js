@@ -30,16 +30,16 @@ const FormikForm = () => (
       }}
     >
       <Form>
-        <Field name="firstName" placeholder="Jane" />
+        <Field name="firstName" placeholder="Name" />
         <ErrorMessage name="firstName" component="p" />
 
-        <Field name="lastName" placeholder="Doe" />
+        <Field name="lastName" placeholder="Last Name" />
         <ErrorMessage name="lastName" component="p" />
 
         <Field
           id="email"
           name="email"
-          placeholder="jane@acme.com"
+          placeholder="email@acme.com"
           type="email"
         />
         <ErrorMessage name="email" component="p" />
