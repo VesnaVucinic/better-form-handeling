@@ -23,6 +23,7 @@ const ContactForm = () => (
         message: "",
         terms: false,
       }}
+      
       validationSchema={validationSchema}
       onSubmit={(values) => {
         console.log(values);

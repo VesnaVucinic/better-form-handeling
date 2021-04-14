@@ -15,6 +15,7 @@ const FormikForm = () => (
         favorite: '',
         checked: [],
         picked: '',
+        terms: false,
       }}
       validationSchema={Yup.object().shape({
         email: Yup.string().email('Invalid email address').required('Required'),
@@ -23,6 +24,7 @@ const FormikForm = () => (
           .min(2, 'Must be longer than 2 characters')
           .max(20, 'Nice try, nobody has a last name that long')
           .required('Required'),
+        terms: Yup.bool().oneOf([true], "You should accept terms and conditions"),
       })}
       onSubmit={async values => {
         await new Promise(r => setTimeout(r, 500));
@@ -74,6 +76,13 @@ const FormikForm = () => (
             <Field type="radio" name="picked" value="Two" />
             Two
           </label>
+        </div>
+        <div className="form-group">
+          <div className="checkbox">
+            <Field type="checkbox" name="terms" />
+            <label htmlFor="terms">I accept Terms And Conditions</label>
+          </div>
+          <ErrorMessage name="terms" />
         </div>
         <button type="submit">Submit</button>
         <div id="renderCounter">{renderCount++}</div>
