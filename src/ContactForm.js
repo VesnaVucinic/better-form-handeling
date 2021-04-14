@@ -25,8 +25,10 @@ const ContactForm = () => (
       }}
       
       validationSchema={validationSchema}
-      onSubmit={(values) => {
+      onSubmit={async values => {
         console.log(values);
+        await new Promise(r => setTimeout(r, 500));
+        alert(JSON.stringify(values, null, 2));
       }}
     >
       <Form>
@@ -51,7 +53,7 @@ const ContactForm = () => (
           </div>
           <ErrorMessage name="terms" />
         </div>
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </Form>
     </Formik>
   </div>
